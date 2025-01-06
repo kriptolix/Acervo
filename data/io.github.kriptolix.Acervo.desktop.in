@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=acervo
+Exec=acervo
+Icon=io.github.kriptolix.Acervo
+Terminal=false
+Type=Application
+Categories=Utility;
+Keywords=GTK;
+StartupNotify=true
+DBusActivatable=true

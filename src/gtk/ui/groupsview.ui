@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="GroupsView" parent="GtkBox">  
+    <property name="orientation">1</property>
+    <property name="hexpand">true</property>
+    <style>
+      <class name="sidebar"/>
+    </style>
+    <child>
+      <object class="AdwToolbarView">
+        <child type="top">
+          <object class="GtkActionBar">
+            <child type="start">
+              <object class="GtkBox">
+                <property name="spacing">5</property>
+                <child>
+                  <object class="GtkLabel" id="_title">
+                    <property name="label" translatable="yes">Collections</property>
+                    <style>
+                      <class name="title-2"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="_plus_button">
+                    <property name="icon-name">list-add-symbolic</property>
+                    <property name="tooltip-text" translatable="yes">Do Not Disturb</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child type="end">
+              <object class="GtkBox">
+                <child>
+                  <object class="GtkButton" id="_search_button">
+                    <property name="icon-name">open-menu-symbolic</property>
+                    <property name="tooltip-text" translatable="yes">Do Not Disturb</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="margin-top">20</property>
+        <property name="margin-start">10</property>
+        <property name="margin-end">10</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">All Itens</property>
+            <property name="hexpand">true</property>
+            <property name="halign">1</property>
+            <style>
+              <class name="title-4"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="_amount">
+            <property name="label">1089</property>
+            <property name="valign">3</property>
+            <property name="halign">3</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkListBox" id="_list_box">
+        <property name="selection-mode">0</property>
+        <property name="vexpand">true</property>
+        <property name="margin-top">20</property>        
+      </object>
+    </child>
+  </template>
+</interface>
