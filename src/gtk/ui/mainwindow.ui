@@ -4,8 +4,8 @@
   <template class="AcervoWindow" parent="AdwApplicationWindow">
     <property name="width-request">360</property>
     <property name="height-request">200</property>
-    <property name="default-width">800</property>
-    <property name="default-height">600</property>
+    <property name="default-width">1280</property>
+    <property name="default-height">720</property>
     <property name="title" translatable="yes">Overlay Split View</property>
     <child>
       <object class="AdwBreakpoint">
@@ -32,22 +32,7 @@
                   <object class="ListsView" id="_lists_view"></object>
                 </property>
                 <property name="content">
-                  <object class="AdwNavigationPage">
-                    <property name="title" translatable="yes">Content</property>
-                    <property name="tag">content</property>
-                    <property name="child">
-                      <object class="AdwToolbarView">
-                        <child type="top">
-                          <object class="AdwHeaderBar">
-                            <property name="show-title">false</property>
-                          </object>
-                        </child>
-                        <property name="content">
-                          <object class="ItensView" id="_itens_view"></object>
-                        </property>
-                      </object>
-                    </property>
-                  </object>
+                  <object class="ItemsView" id="_items_view"></object>
                 </property>
               </object>
             </property>

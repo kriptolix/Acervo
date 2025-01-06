@@ -4,7 +4,8 @@
     <file preprocess="xml-stripblanks">src/gtk/ui/mainwindow.ui</file>
     <file preprocess="xml-stripblanks">src/gtk/ui/listsview.ui</file>
     <file preprocess="xml-stripblanks">src/gtk/ui/groupsview.ui</file>
-    <file preprocess="xml-stripblanks">src/gtk/ui/itensview.ui</file>
+    <file preprocess="xml-stripblanks">src/gtk/ui/itemsview.ui</file>
+    <file preprocess="xml-stripblanks">src/gtk/ui/itembook.ui</file>
     <file preprocess="xml-stripblanks">src/gtk/ui/grouprow.ui</file>
     <file preprocess="xml-stripblanks">src/gtk/ui/help-overlay.ui</file>
   </gresource>

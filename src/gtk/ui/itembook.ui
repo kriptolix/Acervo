@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="ItemBook" parent="GtkBox">
+    <property name="orientation">1</property>
+    <child>
+      <object class="GtkPicture" id="_cover">
+        <property name="margin-start">20</property>
+        <property name="margin-end">20</property>
+        <property name="margin-bottom">20</property>
+        <property name="margin-top">20</property>        
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="spacing">5</property>
+        <property name="margin-start">15</property>
+        <property name="margin-end">15</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Full Title:</property>
+            <style>
+              <class name="heading"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkEditableLabel" id="_ibn">
+            <property name="text">Mistborn: The Final Empire</property>
+            <property name="editable">false</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="spacing">5</property>
+        <property name="margin-start">15</property>
+        <property name="margin-end">15</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label">ISBN:</property>
+            <style>
+              <class name="heading"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkEditableLabel" id="_isbn">
+            <property name="text">1429914564</property>
+            <property name="editable">false</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="spacing">5</property>
+        <property name="margin-start">15</property>
+        <property name="margin-end">15</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label">ISBN13:</property>
+            <style>
+              <class name="heading"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkEditableLabel" id="_isbn13">
+            <property name="text">9781429914567</property>
+            <property name="editable">false</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="spacing">5</property>
+        <property name="margin-start">15</property>
+        <property name="margin-end">15</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Authors:</property>
+            <style>
+              <class name="heading"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkEditableLabel" id="_authors">
+            <property name="text">Brandon Sanderson</property>
+            <property name="editable">false</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="spacing">5</property>
+        <property name="margin-start">15</property>
+        <property name="margin-end">15</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Publisher:</property>
+            <style>
+              <class name="heading"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkEditableLabel" id="_publisher">
+            <property name="text"></property>
+            <property name="editable">false</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="spacing">5</property>
+        <property name="margin-start">15</property>
+        <property name="margin-end">15</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Edition:</property>
+            <style>
+              <class name="heading"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkEditableLabel" id="_edition">
+            <property name="text">1st</property>
+            <property name="editable">false</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="spacing">5</property>
+        <property name="margin-start">15</property>
+        <property name="margin-end">15</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Publish Date:</property>
+            <style>
+              <class name="heading"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkEditableLabel" id="_date">
+            <property name="text">1st</property>
+            <property name="editable">false</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="spacing">5</property>
+        <property name="margin-start">15</property>
+        <property name="margin-end">15</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Pages:</property>
+            <style>
+              <class name="heading"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkEditableLabel" id="_Pages">
+            <property name="text">300</property>
+            <property name="editable">false</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="spacing">5</property>
+        <property name="margin-start">15</property>
+        <property name="margin-end">15</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Synopsis:</property>
+            <style>
+              <class name="heading"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkEditableLabel" id="_synopsis">
+            <property name="text">Lorem ipsum dolor sit amet...</property>
+            <property name="editable">false</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="spacing">5</property>
+        <property name="margin-start">15</property>
+        <property name="margin-end">15</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Language:</property>
+            <style>
+              <class name="heading"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkEditableLabel" id="_language">
+            <property name="text">English</property>
+            <property name="editable">false</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="spacing">5</property>
+        <property name="margin-start">15</property>
+        <property name="margin-end">15</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Subjects:</property>
+            <style>
+              <class name="heading"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkEditableLabel" id="_subjects">
+            <property name="text">English</property>
+            <property name="editable">false</property>
+          </object>
+        </child>
+      </object>
+    </child>  
+  </template>
+</interface>

@@ -1,4 +1,4 @@
-# window.py
+# itembook.py
 #
 # Copyright 2025 k
 #
@@ -17,38 +17,20 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from gi.repository import Adw
+from gi.repository import Gio
 from gi.repository import Gtk
 
-from .listsview import ListsView
-from .groupsview import GroupsView
-from .itemsview import ItemsView
+from .grouprow import GroupRow
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Acervo/'
-              'src/gtk/ui/mainwindow.ui')
-class AcervoWindow(Adw.ApplicationWindow):
-    __gtype_name__ = 'AcervoWindow'
-
-    #_panel_button = Gtk.Template.Child()
-    #_go_button = Gtk.Template.Child()
+              'src/gtk/ui/itembook.ui')
+class ItemBook(Gtk.Box):
+    __gtype_name__ = 'ItemBook'   
     
-    #_overlay_view = Gtk.Template.Child()
-    #_split_view = Gtk.Template.Child()
-    
+    _cover = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-    
 
-        #self._panel_button.connect("clicked", self._show_panel)
-        #self._go_button.connect("clicked", self._navigate_pages)
-        
-
-    def _show_panel(self, button):
-        self._overlay_view.set_show_sidebar(True)
-
-    def _navigate_pages (self, button):
-
-        if button == self._go_button:
-            self._split_view.set_show_content(True)        
-        
+        file = Gio.File.new_for_uri('../../../data/test_book.jpg')
+        self._cover.set_file(file)

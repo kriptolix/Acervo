@@ -1,4 +1,4 @@
-# itenssview.py
+# itemssview.py
 #
 # Copyright 2025 k
 #
@@ -20,10 +20,12 @@
 from gi.repository import Adw
 from gi.repository import Gtk
 
+from .itembook import ItemBook
+
 @Gtk.Template(resource_path='/io/github/kriptolix/Acervo/'
-              'src/gtk/ui/itensview.ui')
-class ItensView(Adw.NavigationPage):
-    __gtype_name__ = 'ItensView'
+              'src/gtk/ui/itemsview.ui')
+class ItemsView(Adw.NavigationPage):
+    __gtype_name__ = 'ItemsView'
 
     #_panel_button = Gtk.Template.Child()    
 
