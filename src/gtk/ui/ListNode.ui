@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <requires lib="gtk" version="4.0"/>
-  <template class="GroupRow" parent="GtkBox">
-    <style>
-      <class name="card"/>
-    </style>
+  <template class="ListNode" parent="GtkBox">
     <property name="orientation">1</property>
     <property name="vexpand">false</property>
     <property name="hexpand">false</property>
     <child>
-      <object class="GtkImage" id="_cover">
-        <property name="icon-name">media-optical-cd-audio-symbolic</property>
+      <object class="GtkImage" id="_emblem">
+        <property name="icon-name">emblem-music-symbolic</property>
         <property name="pixel-size">70</property>
         <property name="margin-start">10</property>
         <property name="margin-end">10</property>
@@ -29,12 +26,8 @@
         </style>
         <child>
           <object class="GtkLabel" id="_title">
-            <property name="label">My Musics</property>
-          </object>
-        </child>
-        <child>
-          <object class="GtkLabel" id="_amount">
-            <property name="label">72</property>
+            <property name="label">A very big music name here</property>
+            <property name="wrap">true</property>
           </object>
         </child>
       </object>

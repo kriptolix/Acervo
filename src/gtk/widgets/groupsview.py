@@ -24,15 +24,25 @@ from .grouprow import GroupRow
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Acervo/'
               'src/gtk/ui/groupsview.ui')
-class GroupsView(Gtk.Box):
+class GroupsView(Adw.NavigationPage):
     __gtype_name__ = 'GroupsView'
 
     _list_box = Gtk.Template.Child()
+    _close_button = Gtk.Template.Child()
     
 
     def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+        super().__init__(**kwargs)        
 
-        row1 = GroupRow()
+        for i in range(0,6):
+            row = GroupRow()
+            self._list_box.append(row)
 
-        self._list_box.append(row1)
+
+        self._list_box.connect("child-activated", self._collection_selected)
+        self._close_button.set_action_name("app.quit")
+
+    def _collection_selected(self, box, child):
+        
+        win = self.get_root()    
+        win._naviagation_view.push_by_tag("_lists")

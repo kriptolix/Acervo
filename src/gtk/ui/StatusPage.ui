@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="StatusPage" parent="AdwBin">
+    <child>
+      <object class="AdwStatusPage" id="_status_page">
+        <property name="title" translatable="true">Placeholder</property>
+        <property name="description" translatable="true">Placeholder</property>
+        <property name="icon-name">dialog-warning-symbolic</property>
+      </object>
+    </child>
+  </template>
+</interface>

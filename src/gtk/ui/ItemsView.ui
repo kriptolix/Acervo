@@ -8,40 +8,56 @@
       <object class="AdwToolbarView">
         <child type="top">
           <object class="GtkActionBar">
-            <child type="start">
-              <object class="GtkLabel">
+            <child>
+              <object class="GtkButton" id="_back_button">
+                <property name="icon-name">go-previous-symbolic</property>
+                <property name="tooltip-text" translatable="yes">Do Not Disturb</property>
+                <property name="visible">false</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="_hide_button">
+                <property name="icon-name">go-next-symbolic</property>
+                <property name="tooltip-text" translatable="yes">Do Not Disturb</property>
+              </object>
+            </child>
+            <child type="center">
+              <object class="GtkLabel" id="_item_title">
                 <property name="label">Mistborn: The Final Empire</property>
+                <property name="ellipsize">3</property>
+                <property name="max-width-chars">19</property>
                 <style>
                   <class name="title-2"/>
                 </style>
               </object>
             </child>
             <child type="end">
-              <object class="GtkBox">
-                <child>
-                  <object class="GtkButton" id="_edit_button">
-                    <property name="icon-name">document-edit-symbolic</property>
-                    <property name="tooltip-text" translatable="yes">Do Not Disturb</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkButton" id="_close_button">
-                    <property name="icon-name">window-close-symbolic</property>
-                    <property name="tooltip-text" translatable="yes">Do Not Disturb</property>
-                  </object>
-                </child>
+              <object class="GtkButton" id="_close_button">
+                <property name="icon-name">window-close-symbolic</property>
+                <property name="tooltip-text" translatable="yes">Do Not Disturb</property>
               </object>
             </child>
           </object>
         </child>
         <property name="content">
-          <object class="ItemBook"></object>
+          <object class="GtkScrolledWindow">
+            <property name="hscrollbar-policy">2</property>
+            <child>
+              <object class="TemplateMusic"></object>
+            </child>
+          </object>
         </property>
         <child type="bottom">
           <object class="GtkActionBar">
             <child type="start">
               <object class="GtkButton" id="_trash_button">
                 <property name="icon-name">user-trash-symbolic</property>
+                <property name="tooltip-text" translatable="yes">Do Not Disturb</property>
+              </object>
+            </child>
+            <child type="start">
+              <object class="GtkButton" id="_edit_button">
+                <property name="icon-name">document-edit-symbolic</property>
                 <property name="tooltip-text" translatable="yes">Do Not Disturb</property>
               </object>
             </child>

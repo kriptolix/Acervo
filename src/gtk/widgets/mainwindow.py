@@ -24,31 +24,54 @@ from .listsview import ListsView
 from .groupsview import GroupsView
 from .itemsview import ItemsView
 
+
 @Gtk.Template(resource_path='/io/github/kriptolix/Acervo/'
               'src/gtk/ui/mainwindow.ui')
 class AcervoWindow(Adw.ApplicationWindow):
     __gtype_name__ = 'AcervoWindow'
 
-    #_panel_button = Gtk.Template.Child()
-    #_go_button = Gtk.Template.Child()
-    
-    #_overlay_view = Gtk.Template.Child()
-    #_split_view = Gtk.Template.Child()
-    
+    _naviagation_view = Gtk.Template.Child()
+    _break_point = Gtk.Template.Child()
+    _lists_view = Gtk.Template.Child()
+    _items_view = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-    
 
-        #self._panel_button.connect("clicked", self._show_panel)
-        #self._go_button.connect("clicked", self._navigate_pages)
-        
+        # self._panel_button.connect("clicked", self._show_panel)
+        # self._go_button.connect("clicked", self._navigate_pages)
 
-    def _show_panel(self, button):
-        self._overlay_view.set_show_sidebar(True)
+        self._break_point.connect("apply", self._breakpoint_applied)
+        self._break_point.connect("unapply", self._breakpoint_unapplied)
 
-    def _navigate_pages (self, button):
+    def _breakpoint_applied(self, breakpoint):
 
-        if button == self._go_button:
-            self._split_view.set_show_content(True)        
-        
+        print("apply")
+
+        self._lists_view._revealer.set_reveal_child(False)
+        self._items_view._hide_button.set_visible(False)
+        self._items_view._back_button.set_visible(True)
+        self._items_view._item_title.set_max_width_chars(-1)
+
+        page = self._naviagation_view.get_visible_page()
+
+        if (page == self._lists_view and
+                self._lists_view._revealer.set_reveal_child()):
+
+            self._naviagation_view.push_by_tag("_items")
+
+    def _breakpoint_unapplied(self, breakpoint):
+
+        print("unapply")
+
+        self._lists_view._revealer.set_reveal_child(True)
+        self._items_view._hide_button.set_visible(True)
+        self._items_view._back_button.set_visible(False)
+        self._items_view._item_title.set_max_width_chars(19)
+
+        page = self._naviagation_view.get_visible_page()
+
+        if (page == self._items_view and
+                self._lists_view._revealer.set_reveal_child()):
+
+            self._naviagation_view.push_by_tag("_items")

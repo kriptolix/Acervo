@@ -1,4 +1,4 @@
-# itemssview.py
+# TemplateMusic.py
 #
 # Copyright 2025 k
 #
@@ -17,27 +17,27 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from gi.repository import Adw
+from gi.repository import GObject
 from gi.repository import Gtk
 
-from .musicdata import TemplateMusic
+class MusicObject(GObject.Object):
+    __gtype_name__ = 'MusicObject'
+
+    #_title = GObject.Property(type=str, default="title")    
+    
+    def __init__(self, title):
+        super().__init__()
+
+        self._title = title
+
 
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Acervo/'
-              'src/gtk/ui/ItemsView.ui')
-class ItemsView(Adw.NavigationPage):
-    __gtype_name__ = 'ItemsView'
-
-    _close_button = Gtk.Template.Child()
-    _edit_button = Gtk.Template.Child()
-    _hide_button = Gtk.Template.Child()
-    _back_button = Gtk.Template.Child()
-    _item_title = Gtk.Template.Child()
-    # _trash_button = Gtk.Template.Child()
-    # _favorite_button = Gtk.Template.Child()
-    # _unwatch_button = Gtk.Template.Child()
+              'src/gtk/ui/TemplateMusic.ui')
+class TemplateMusic(Gtk.Box):
+    __gtype_name__ = 'TemplateMusic'   
+    
+    _cover = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-
-        self._close_button.set_action_name("app.quit")

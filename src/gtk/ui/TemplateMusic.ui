@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <requires lib="gtk" version="4.0"/>
-  <template class="ItemBook" parent="GtkBox">
+  <template class="TemplateMusic" parent="GtkBox">
     <property name="orientation">1</property>
+    <property name="halign">1</property>
     <child>
-      <object class="GtkPicture" id="_cover">
-        <property name="margin-start">20</property>
-        <property name="margin-end">20</property>
-        <property name="margin-bottom">20</property>
-        <property name="margin-top">20</property>        
+      <object class="GtkImage" id="_cover">
+        <property name="icon-name">media-optical-cd-audio-symbolic</property>
+        <property name="pixel-size">140</property>
+        <property name="margin-start">10</property>
+        <property name="margin-end">10</property>
+        <property name="margin-top">10</property>
+        <property name="margin-bottom">10</property>
+        <property name="halign">3</property>        
       </object>
     </child>
     <child>
@@ -241,6 +245,6 @@
           </object>
         </child>
       </object>
-    </child>  
+    </child>
   </template>
 </interface>

@@ -1,4 +1,4 @@
-# itembook.py
+# listnode.py
 #
 # Copyright 2025 k
 #
@@ -17,20 +17,16 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-from gi.repository import Gio
 from gi.repository import Gtk
 
-from .grouprow import GroupRow
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Acervo/'
-              'src/gtk/ui/itembook.ui')
-class ItemBook(Gtk.Box):
-    __gtype_name__ = 'ItemBook'   
-    
-    _cover = Gtk.Template.Child()
+              'src/gtk/ui/ListNode.ui')
+class ListNode(Gtk.Box):
+    __gtype_name__ = 'ListNode'
 
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    _title = Gtk.Template.Child()
+    _emblem = Gtk.Template.Child()
 
-        file = Gio.File.new_for_uri('../../../data/test_book.jpg')
-        self._cover.set_file(file)
+    def __init__(self):
+        super().__init__()

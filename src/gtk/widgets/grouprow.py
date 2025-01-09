@@ -22,7 +22,7 @@ from gi.repository import Gtk
 
 @Gtk.Template(resource_path='/io/github/kriptolix/Acervo/'
               'src/gtk/ui/grouprow.ui')
-class GroupRow(Adw.ActionRow):
+class GroupRow(Gtk.Box):
     __gtype_name__ = 'GroupRow'
 
     #_panel_button = Gtk.Template.Child()
